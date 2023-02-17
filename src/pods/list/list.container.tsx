@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { MemberEntity } from './list.vm';
+import { List } from './list.component';
 
 export const ListContainer : React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
@@ -12,10 +12,6 @@ export const ListContainer : React.FC = () => {
   }, []);
 
   return (
-    <>
-      <h2>Hello from List page</h2>+{" "}
-      
-      <Link to="/detail">Navigate to detail page</Link>
-    </>
+    <List members={members} />
   );
 }
