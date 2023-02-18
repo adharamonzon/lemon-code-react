@@ -16,6 +16,25 @@
   width: 80px;
 }
 
+.rick-morty-login {
+  position: absolute;
+  right: 20%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 200px;
+  cursor: pointer;
+}
+
+.img{
+  width: 100%;
+}
+
 .layout-center {
   display: grid;
   grid-template-columns: 1fr;

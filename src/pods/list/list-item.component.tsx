@@ -10,9 +10,9 @@ export const ListItem : React.FC<Props> = (props) => {
   
   return (
     <>
-      <img src={member.avatar_url} />
+      <img src={member.avatarUrl} />
       <span>{member.id}</span>
-      <Link to={`/detail/${member.login}`}>{member.login}</Link>
+      <Link to={`/detail/${member.login}`}>{member.login}</Link>      
     </>
   )
 }

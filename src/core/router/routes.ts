@@ -4,12 +4,14 @@ interface SwitchRoutes {
   root: string;
   list: string;
   details: string;
+  rickMorty: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
   root: "/",
   list: "/list",
   details: "/detail/:id",
+  rickMorty: "/rick-morty",
 };
 
 interface Routes extends Omit<SwitchRoutes, "details"> {
