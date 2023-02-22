@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import clases from './login.styles.css';
 import { createEmptyFormData, LoginData } from './login.vm';
+import { LoginContainer } from './login.container';
+import { Link } from 'react-router-dom';
 
 interface Props {
   onLogin: (formData: LoginData) => void;
@@ -27,22 +28,27 @@ export const Login: React.FC<Props> = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Welcome, login to see more info about Github organizations and users</p>
-      <div className="login-container">
-        <input
-          placeholder="Username"
-          value={formData.username}
-          onChange={handleChange('username')}
-        />
-        <input
-          placeholder="Password"
-          type="password"
-          value={formData.password}
-          onChange={handleChange('password')}
-        />
-        <button type="submit">login</button>        
-      </div>
-    </form>
+    <div >
+      <form className={clases.LoginContainer} onSubmit={handleSubmit}>
+        <h4>Welcome, login to see more info about Github organizations and users</h4>
+        <div>
+          <input
+            placeholder="Username"
+            value={formData.username}
+            onChange={handleChange('username')}
+          />
+        </div>
+        <div>
+          <input
+            placeholder="Password"
+            type="password"
+            value={formData.password}
+            onChange={handleChange('password')}
+          />
+          <button type="submit">login</button> 
+          {/* <Link to="/rick-morty">rick y morty</Link>  */}      
+        </div>
+      </form>
+    </div>
   );
 };

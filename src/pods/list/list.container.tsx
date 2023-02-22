@@ -8,7 +8,7 @@ export const ListContainer : React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
   React.useEffect(() => {
-      getMemberList()
+    getMemberList()
       .then((results) => mapMemberListToMv(results))
       .then((results) => setMembers(results));
   }, []);
