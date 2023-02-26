@@ -14,7 +14,7 @@ export const ProfileProvider: React.FC<Props> = ({ children }) => {
     <ProfileContext.Provider
       value={{ username: profile?.username, setUserProfile: setProfile }}
     >
-      <>{profile ? children : <LoginPage/>}</>
+      {children}
     </ProfileContext.Provider>
   );
 };

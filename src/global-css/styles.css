@@ -1,40 +1,12 @@
 @import '../pods/login/login.styles.css';
+@import '../pods/list/list.styles.css';
+@import '../pods/rick-morty/rick-morty.styles.css';
 
-.list-user-list-container {
-  display: grid;
-  grid-template-columns: 80px 1fr 3fr;
-  grid-template-rows: 20px;
-  grid-auto-rows: 80px;
-  grid-gap: 10px 5px;
-}
-
-.list-header {
-  background-color: #2f4858;
-  color: white;
-  font-weight: bold;
-}
-
-.list-user-list-container > img {
-  width: 80px;
-}
-
-.rick-morty-login {
-  position: absolute;
-  right: 20%;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.img-container {
-  width: 200px;
-  cursor: pointer;
-}
-
-.img{
-  width: 100%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .layout-center {

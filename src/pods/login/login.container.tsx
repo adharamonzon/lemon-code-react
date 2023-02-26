@@ -1,5 +1,5 @@
 import React from 'react';
-//styles
+
 import { ProfileContext } from '../../core/providers';
 import { Login } from './login.component';
 import { LoginData } from './login.vm';

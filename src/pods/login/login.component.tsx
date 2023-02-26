@@ -1,8 +1,9 @@
 import React from 'react';
-import clases from './login.styles.css';
+import { Link, useNavigate } from 'react-router-dom';
 import { createEmptyFormData, LoginData } from './login.vm';
-import { LoginContainer } from './login.container';
-import { Link } from 'react-router-dom';
+import clases from './login.styles.css';
+import rickMortyPhoto from '../../assets/rickymorti.png';
+import { TextInputComponent } from '../../common/components/input/text-input.component';
 
 interface Props {
   onLogin: (formData: LoginData) => void;
@@ -13,42 +14,50 @@ export const Login: React.FC<Props> = (props) => {
   const [formData, setFormData] = React.useState<LoginData>(
     createEmptyFormData()
   );
+  const navigate = useNavigate();
  
   const handleChange = (field: keyof LoginData) => 
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (value:string) => {
       setFormData({
         ...formData,
-       [field]: e.target.value,
+       [field]: value,
       });
     };
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    onLogin(formData)
+    onLogin(formData);
+    navigate("/list");
   }
 
   return (
-    <div >
-      <form className={clases.LoginContainer} onSubmit={handleSubmit}>
-        <h4>Welcome, login to see more info about Github organizations and users</h4>
+    <div className={clases.home}>
+      <form className={clases.loginContainer} >
+        <h4 className={clases.title}>Welcome, login to see more info about Github organizations and users</h4>
         <div>
-          <input
-            placeholder="Username"
+          <TextInputComponent
             value={formData.username}
             onChange={handleChange('username')}
+            placeholder="UserName" 
           />
         </div>
         <div>
-          <input
-            placeholder="Password"
-            type="password"
+        <TextInputComponent
             value={formData.password}
             onChange={handleChange('password')}
+            placeholder="Password"
+            type="password"
           />
-          <button type="submit">login</button> 
-          {/* <Link to="/rick-morty">rick y morty</Link>  */}      
         </div>
+        <button type="submit" onClick={handleSubmit}>Login</button> 
       </form>
+
+          <div className='rick-morty-login'>
+            <h3>¿Quieres ver los personajes de Rick y Morty?</h3>
+            <Link className='img-container' to='/rick-morty'>
+              <img className='img' src={rickMortyPhoto} alt="Imagen de Rick y Morty" />
+            </Link>
+          </div>  
     </div>
   );
 };

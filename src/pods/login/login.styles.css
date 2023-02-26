@@ -1,14 +1,47 @@
-.login-container {
+.home {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
-
+.login-container {
+  width: 300px;
+  height: 200px;
+  border-radius: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.title {
+  text-align: center;
+}
 .login-container input {
-  width: 320px;
+  width: 220px;
+  height: 30px;
+  margin-top: 20px;
 }
 
 .login-container button {
-  width: 180px;
+  width: 80px;
+  height: 30px;
   align-self: center;
+  margin-top: 20px;
+}
+
+.rick-morty-login {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 200px;
+  cursor: pointer;
+}
+
+.img{
+  width: 100%;
 }
