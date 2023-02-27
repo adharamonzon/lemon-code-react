@@ -17,7 +17,8 @@ export const RickMortyContainer : React.FC = () => {
       .then((results) => setCharacters(results))
   }, [character])
 
-  const searchCharacter = (value: string) => {
+  const searchCharacter = () =>
+  (value: string) => {
     setCharacter(value);
   }
 

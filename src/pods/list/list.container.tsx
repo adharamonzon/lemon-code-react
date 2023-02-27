@@ -15,7 +15,7 @@ export const ListContainer : React.FC = () => {
       .then((results) => setMembers(results));
   }, [organization]);
 
-  const handleChange = (value:  string) => {
+  const handleChange = (value:  string):void => {
     setOrganization(value)    
   }
 
@@ -23,7 +23,7 @@ export const ListContainer : React.FC = () => {
     <>
       <TextInputComponent
               value={organization}
-              onChange={handleChange(organization)}
+              onChange={() => setOrganization(organization)}
               placeholder="Buscar organización..." 
       />
       <List members={members} />

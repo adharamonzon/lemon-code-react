@@ -6,7 +6,7 @@ interface Props {
   name?: string;
   id?: string;
   type?: "text" | "password";
-  onChange: (value:string) => void;
+  onChange: (event) => void;
   placeholder?: string;
   label?: string  
 }

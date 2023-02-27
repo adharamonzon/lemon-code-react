@@ -1,33 +1,27 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { createEmptyFormData, LoginData } from './login.vm';
 import clases from './login.styles.css';
 import rickMortyPhoto from '../../assets/rickymorti.png';
 import { TextInputComponent } from '../../common/components/input/text-input.component';
+import { ProfileContext } from '../../core/providers';
 
-interface Props {
-  onLogin: (formData: LoginData) => void;
-};
+export const Login: React.FC = () => {
 
-export const Login: React.FC<Props> = (props) => {
-  const { onLogin } = props;
-  const [formData, setFormData] = React.useState<LoginData>(
-    createEmptyFormData()
-  );
+  const [username, setUserName] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const { setUserProfile } = React.useContext(ProfileContext);
+
   const navigate = useNavigate();
- 
-  const handleChange = (field: keyof LoginData) => 
-    (value:string) => {
-      setFormData({
-        ...formData,
-       [field]: value,
-      });
-    };
+
   
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    onLogin(formData);
-    navigate("/list");
+    setUserProfile({username: username});
+    if(username === 'admin' && password === 'test') {
+      navigate("/list")
+    } else {
+      alert("User / password incorrect, psst... admin / test");
+    }
   }
 
   return (
@@ -36,15 +30,15 @@ export const Login: React.FC<Props> = (props) => {
         <h4 className={clases.title}>Welcome, login to see more info about Github organizations and users</h4>
         <div>
           <TextInputComponent
-            value={formData.username}
-            onChange={handleChange('username')}
+            value={username}
+            onChange={(e) => setUserName(e)}
             placeholder="UserName" 
           />
         </div>
         <div>
         <TextInputComponent
-            value={formData.password}
-            onChange={handleChange('password')}
+            value={password}
+            onChange={(e) => setPassword(e)}
             placeholder="Password"
             type="password"
           />
