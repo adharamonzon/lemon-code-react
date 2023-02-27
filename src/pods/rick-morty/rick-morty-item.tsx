@@ -16,7 +16,7 @@ export const RickMortyItemComponent : React.FC<Props> = (props) => {
         </div>
         <ul className={clases.characteristics}>
           <li className={clases.characteristic}>Especie: {character.species}</li> 
-          <li className={clases.characteristic}>Origen: {character.originName}</li> 
+          <li className={clases.characteristic}>Origen: {character.originName }</li> 
           <li className={clases.characteristic}>{character.status}</li>
         </ul>
       </div>
