@@ -1,6 +1,7 @@
 import React from 'react';
 import { Character } from './rick-morty.vm';
 import clases from './rick-morty.styles.css'
+import { Link } from 'react-router-dom';
  
 interface Props {
   character : Character
@@ -15,9 +16,9 @@ export const RickMortyItemComponent : React.FC<Props> = (props) => {
           <img className={clases.img} src={character.img} alt='Character image' />
         </div>
         <ul className={clases.characteristics}>
-          <li className={clases.characteristic}>Especie: {character.species}</li> 
-          <li className={clases.characteristic}>Origen: {character.originName }</li> 
+          <li className={clases.characteristic}>Epecies: {character.species}</li>  
           <li className={clases.characteristic}>{character.status}</li>
+          <Link to={`/rick-morty-detail/${character.id}`} >Saber más</Link>
         </ul>
       </div>
     </li>

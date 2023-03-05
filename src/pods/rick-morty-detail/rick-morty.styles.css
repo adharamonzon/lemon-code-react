@@ -1,0 +1,40 @@
+.detail {
+  height: 93vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63,251,208);
+  background: radial-gradient(circle, rgba(63,251,208,0.87718837535014) 0%, rgba(86,252,70,1) 100%);
+ 
+}
+.headerContainer {
+  display: flex;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  text-transform: uppercase;
+  margin: 20px;
+}
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.characterList {
+  list-style: none;
+  width: 300px;
+}
+.characterListItem {
+  margin-top: 15px;
+}
+.highligth {
+  font-weight: bold;
+}
+.characterImg {
+  border-radius: 3px;
+}

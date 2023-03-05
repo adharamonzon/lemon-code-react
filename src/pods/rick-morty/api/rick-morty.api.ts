@@ -6,3 +6,4 @@ export const getCharactersFromApi = () : Promise<Character[]> => {
     .then(resp => resp.results)
   ) 
 }
+

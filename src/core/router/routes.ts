@@ -5,6 +5,7 @@ interface SwitchRoutes {
   list: string;
   details: string;
   rickMorty: string;
+  rickMortyDetail: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -12,13 +13,11 @@ export const switchRoutes: SwitchRoutes = {
   list: "/list",
   details: "/detail/:id",
   rickMorty: "/rick-morty",
+  rickMortyDetail: "/rick-morty-detail/:id",
 };
 
-interface Routes extends Omit<SwitchRoutes, "details"> {
-  details: (id: string) => string;
-}
-
-export const routes: Routes = {
+export const routes = {
   ...switchRoutes,
-  details: (id) => generatePath(switchRoutes.details, { id }),
+  details: (id: string) => generatePath(switchRoutes.details, { id }),
+  rickMortyDetail: (id: string) => generatePath(switchRoutes.rickMortyDetail, {id})
 };
