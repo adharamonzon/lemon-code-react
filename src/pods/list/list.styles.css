@@ -17,5 +17,15 @@
   width: 80px;
 }
 .input {
-  margin-bottom: 30px;
+  margin-top: 70px;
+  margin-left: 20px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.MuiListItem-root{
+  width: 30%;
 }

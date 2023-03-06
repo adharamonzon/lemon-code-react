@@ -19,11 +19,14 @@ export const ListContainer : React.FC = () => {
 
   return (
     <>
+    <div className='input'>
       <TextInputComponent
               value={organization}
               onChange={(e) => setOrganization(e)}
               placeholder="Buscar organización..." 
+              label='Search organization:'
       />
+    </div>
       <List members={members} />
     </>
   );

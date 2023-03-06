@@ -1,5 +1,6 @@
 @import '../pods/login/login.styles.css';
 @import '../pods/list/list.styles.css';
+@import '../pods/detail/detail.styles.css';
 @import '../pods/rick-morty/rick-morty.styles.css';
 @import '../pods//rick-morty-detail/rick-morty.styles.css';
 

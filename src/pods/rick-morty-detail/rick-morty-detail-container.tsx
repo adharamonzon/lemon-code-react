@@ -33,7 +33,8 @@ export const RickMortyDetailContainer : React.FC<Props> = (props) => {
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then(resp => resp.json())
-      .then((resp) => setCharacter(resp))
+      .then((resp) => setCharacter(resp)
+)
   }, []);
 
   return (

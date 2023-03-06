@@ -5,6 +5,12 @@ import rickMortyPhoto from '../../assets/rickymorti.png';
 import { TextInputComponent } from '../../common/components/input/text-input.component';
 import { ProfileContext } from '../../core/providers';
 
+//Material design
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+
 export const Login: React.FC = () => {
 
   const [username, setUserName] = React.useState('');
@@ -25,9 +31,10 @@ export const Login: React.FC = () => {
   }
 
   return (
-    <div className={clases.home}>
+    <Card className={clases.home}>
+      <CardHeader title='Welcome, login to see more info about Github organizations and users' />
+      <CardContent>
       <form className={clases.loginContainer} >
-        <h4 className={clases.title}>Welcome, login to see more info about Github organizations and users</h4>
         <div>
           <TextInputComponent
             value={username}
@@ -43,7 +50,7 @@ export const Login: React.FC = () => {
             type="password"
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>Login</button> 
+        <Button variant="contained" type="submit" onClick={handleSubmit}>Login</Button> 
       </form>
 
           <div className='rick-morty-login'>
@@ -52,6 +59,7 @@ export const Login: React.FC = () => {
               <img className='img' src={rickMortyPhoto} alt="Imagen de Rick y Morty" />
             </Link>
           </div>  
-    </div>
+          </CardContent>
+    </Card>
   );
 };
